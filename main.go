@@ -1,10 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"path"
-)
-
 // Leftover from first lesson where we called the name of the mascot from the mascot.go package
 // func main() {
 // 	fmt.Println(mascot.BestMascot())
@@ -28,8 +23,36 @@ import (
 // }
 
 // This demonstrates short declarations. Note that we can declare and assign the value of file in the same line of code using the ":=" operator.
-func main() {
-	_, file := path.Split("css/main.css")
+// CONVENTION: DO NOT USE SHORT DECLARATION IF YOU DON'T KNOW THE INITIAL VALUE
+// func main() {
+// 	_, file := path.Split("css/main.css")
 
-	fmt.Println("file name:", file)
+// 	fmt.Println("file name:", file)
+// }
+
+// func main() {
+// 	// score := 0 // DONT DO THIS
+// 	var score int  // When you initialize an int variable it is automatically set to 0. This is better practice.
+// 	println(score) // CHeck here. console outputs score value as "0" 👍
+
+// 	// When you want to declare multiple variables, it's nice to group them based on relatedness. See this example:
+// 	// var (
+// 	// 	// related:
+// 	// 	video string
+
+// 	// 	// closely related:
+// 	// 	duration int
+// 	// 	current  int
+// 	// )
+//}
+
+// WHEN TO USE SHORT DECLARATION:
+// In Go, short declaration is actually preferred wherever possible to keep code concise.
+func main() {
+	width, height := 100, 50 // Since we know both starting values and they are non-zero, use short. Note that you can assign multiple variables at once.
+
+	// Use short declaration when you are redeclaring a variable. This can be combined with declaring a new variable as in the following:
+	width, color := 50, "red"
+
+	println(width, height, color)
 }
